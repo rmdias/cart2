@@ -1,0 +1,18 @@
+<h1>Catalog</h1>
+<ul>
+    <li *for="#item of catalog.items">
+        <material-catalog-item price="100"></material-catalog-item>
+        <span>{{ item.name }}</span>
+        <button (click)="cart.addItem(item)">add</button>
+    </li>
+</ul>
+
+<hr/>
+<h1>Cart</h1>
+<ul>
+    <li *for="#cartItem of cart.items">
+        <span>{{ cartItem.name }}</span>
+        <span>{{ cartItem.quantity }}</span>
+        <button (click)="cart.removeItem(cartItem)">remove</button>
+    </li>
+</ul>
